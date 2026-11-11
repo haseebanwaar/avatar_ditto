@@ -1,0 +1,42 @@
+{
+  "resolution": 2048,
+  "dimensions": [
+    1536,
+    2048
+  ],
+  "received_fps": 25.008050316478748,
+  "first_decoded_video_seconds_including_upload_setup": 1.3877959540041047,
+  "video_frames": 4480,
+  "idle_pixel_difference": 2.059642650462963,
+  "stalls": 0,
+  "model_load_count": 1,
+  "repeated_speech_same_session": true,
+  "dynamic_motion_intensity": 0.5,
+  "encoder": {
+    "mode": "quality",
+    "target_bitrate": 8200000,
+    "receiver_requested_bitrate": 12417152,
+    "crf": 20,
+    "context_creations": 1,
+    "encoded_frames": 4481,
+    "encoded_bytes": 139004514
+  },
+  "soak_duration_seconds": 180,
+  "overall_received_fps": 25.00096372215185,
+  "min_10_second_window_fps": 24.954460392256173,
+  "max_10_second_window_fps": 25.017424221522425,
+  "test_scope": "180-second local single-stream 2K run. Other active demo was also on the workstation. CRF quality mode, one context, no generation stalls.",
+  "test_date": "2026-11-11",
+  "controlled_compression_comparison": {
+    "upstream": {
+      "context_creations": 6,
+      "mean_face_luma_psnr": 33.83466520935742,
+      "min_face_luma_psnr": 29.345905489544588
+    },
+    "stable": {
+      "context_creations": 1,
+      "mean_face_luma_psnr": 44.94315171587473,
+      "min_face_luma_psnr": 44.229181584555064
+    }
+  }
+}

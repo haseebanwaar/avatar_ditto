@@ -1,0 +1,5 @@
+class PCM16Capture extends AudioWorkletProcessor{
+ constructor(){super();this.pending=[];this.phase=0;this.packet=[];this.ratio=sampleRate/16000;this.port.onmessage=event=>{if(event.data?.type==='flush'){if(this.packet.length){const packet=Int16Array.from(this.packet);this.port.postMessage(packet.buffer,[packet.buffer]);this.packet=[]}this.port.postMessage({type:'flushed'})}}}
+ process(inputs){const input=inputs[0]?.[0];if(!input)return true;for(const sample of input)this.pending.push(sample);while(this.phase+1<this.pending.length){const i=Math.floor(this.phase),a=this.phase-i;const sample=this.pending[i]*(1-a)+this.pending[i+1]*a;this.packet.push(Math.max(-32768,Math.min(32767,Math.round(sample*32767))));this.phase+=this.ratio;if(this.packet.length===1600){const packet=Int16Array.from(this.packet);this.port.postMessage(packet.buffer,[packet.buffer]);this.packet=[]}}const used=Math.min(Math.floor(this.phase),this.pending.length);this.pending.splice(0,used);this.phase-=used;return true}
+}
+registerProcessor('pcm16-capture',PCM16Capture);

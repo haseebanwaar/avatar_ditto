@@ -1,0 +1,1 @@
+"""Resident GPU Ditto service."""

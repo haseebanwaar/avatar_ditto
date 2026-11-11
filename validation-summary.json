@@ -1,0 +1,18 @@
+{
+  "resolution": 2048,
+  "dimensions": [
+    1536,
+    2048
+  ],
+  "received_fps": 24.978481650015276,
+  "first_decoded_video_seconds_including_upload_setup": 1.25847306799551,
+  "video_frames": 306,
+  "idle_pixel_difference": 1.4888961226851851,
+  "stalls": 0,
+  "model_load_count": 1,
+  "repeated_speech_same_session": true,
+  "dynamic_motion_intensity": 0.5,
+  "test_date": "2026-11-11",
+  "hardware": "One RTX 4090 on a workstation with two RTX 4090 GPUs",
+  "scope": "Short local single-stream GPU test; no remote-network or concurrent-user guarantee. Model dependencies reused locally for test execution; source setup uses scripts/bootstrap.sh."
+}

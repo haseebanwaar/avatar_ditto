@@ -1,0 +1,20 @@
+Ditto Streaming API
+
+Includes inference code from Ant Group's Ditto project:
+https://github.com/antgroup/ditto-talkinghead
+Upstream commit: c3e47eee2e626500017a0556b470d6d4182f85e8
+Vendored code: vendor/ditto/ (Apache License 2.0; original LICENSE retained).
+
+Local modifications inherited from the working prototype:
+- Cython cache output located under the vendored package's .cache directory.
+- Mouth expression strength with smoothing in MotionStitch.
+New modification:
+- Overall source-to-driven keypoint motion intensity with smoothing,
+  applied after stitching in MotionStitch.__call__.
+New service code: ditto_api/, web/, scripts/, tests/.
+
+Model weights are not included. Bundled upstream model repositories and
+third-party components can have separate terms. In particular, InsightFace
+pretrained model terms require review before commercial deployment.
+No user portraits, recorded audio, generated videos, credentials or local
+GPU environments are intended to be distributed with the source repository.
