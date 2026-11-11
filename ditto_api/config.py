@@ -39,7 +39,7 @@ class Settings:
             checkpoints=path("DITTO_CHECKPOINTS", "checkpoints"),
             runtime=path("DITTO_RUNTIME", "runtime"),
             default_resolution=resolution,
-            max_session_seconds=int(os.getenv("DITTO_MAX_SESSION_SECONDS", "3600")),
+            max_session_seconds=int(os.getenv("DITTO_MAX_SESSION_SECONDS", "864000")),
             connect_timeout=int(os.getenv("DITTO_CONNECT_TIMEOUT", "60")),
             video_mode=mode,
             video_crf=crf,
